@@ -1,0 +1,9 @@
+$bg-color: #ff0a0a;
+body{
+	background: $bg-color;
+	span{
+		background: $bg-color;
+		width: 100px;
+		display: block;
+	}
+}

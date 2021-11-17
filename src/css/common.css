@@ -1,0 +1,126 @@
+* {
+	font-family: "Lucida Grande","微软雅黑"
+}
+
+html,body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,p,blockquote,fieldset,input,abbr,article,aside,command,details,figcaption,figure,footer,header,hgroup,mark,meter,nav,output,progress,section,summary,time,button {
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+}
+
+h1,h2,h3,h4,h5,h6,pre,code,address,caption,cite,code,em,strong,th,figcaption {
+	font-weight: normal;
+	font-style: normal
+}
+
+ul,li,dl,dt,dd {
+	list-style: none
+}
+
+fieldset,iframe,img {
+	border: 0;
+}
+
+i, cite, em, var, address {
+	font-style: normal
+}
+
+caption,th {
+	text-align: left;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+article,aside,footer,header,hgroup,nav,section,figure,figcaption,video {
+	display: block;
+}
+
+a {
+	text-decoration: none;
+	color: #333333;
+	outline: none;
+}
+
+input {
+	outline: none;
+	border: 0;
+}
+
+body,section {
+	background: #f1f1f1;
+}
+
+#wrap {
+	margin: 0 auto;
+	padding: 0;
+}
+
+#header {
+	padding: 0;
+	margin: 0 auto;
+	position: relative;
+	height: 170px;
+	background: #e5e4c8;
+	box-shadow: 0 2px 3px #cbcbcb;
+	border-bottom: solid 1px #b9b9b9;
+}
+
+.footer {
+	margin: 0 auto;
+	padding: 0;
+	width: 100%;
+	background: #e5e4c8;
+	box-shadow: 0px -1px 3px #a9a9a9;
+	border-top: solid 1px #bababa;
+}
+
+.font-s14 {
+	font-size: 14px;
+}
+
+.cor_999 {
+	color: #999;
+}
+
+.pad-top30 {
+	padding-top: 30px;
+}
+
+.pad-top10 {
+	padding-top: 10px;
+}
+
+.pad-r10 {
+	padding-right: 10px;
+}
+
+.mar-top20 {
+	margin-top: 20px;
+}
+
+.mar-top30 {
+	margin-top: 30px;
+}
+
+.mar-top50 {
+	margin-top: 50px;
+}
+
+.mar-top16 {
+	margin-top: 16px;
+}
+
+.flo-r {
+	float: right
+}
+
+.position-re {
+	position: relative;
+}
+
+.bor-b-dot {
+	border-bottom: dotted 1px #848484;
+}
