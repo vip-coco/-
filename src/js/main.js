@@ -1,2 +1,5 @@
 import '../css/style.css';
-import './index';
+import '../css/index.less';
+import '../css/stylus.styl';
+
+// import './index';

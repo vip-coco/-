@@ -4,7 +4,7 @@
 	width: 308px;
 	height: 222px;
 	background: url(../imgs/logo.png) no-repeat;
-	text-indent: -9999px;
+	text-indent: -9999px;  
 }
 
 .share {
@@ -434,7 +434,7 @@
 
 	.search {
 		float: none;
-		width: 340px;
+		width: 336px;
 		height: 38px;
 		background: #fff;
 		border: solid 2px #57ad00;
