@@ -52,7 +52,7 @@ module.exports = {
           },
         },
         generator: {
-          filename: "imgs/[hash:10].[name][ext]",
+          filename: "imgs/[contenthash:10].[name][ext]",
         },
       },
       {
@@ -69,34 +69,51 @@ module.exports = {
           },
         },
         generator: {
-          filename: "file/[hash:10].[name][ext]",
+          filename: "file/[contenthash:10].[name][ext]",
         },
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel-loader",
-        options: {
-          presets: [
-            [
-              "@babel/preset-env",
-              {
-                useBuiltIns: "usage",
-                corejs: {
-                  version: 3,
-                },
-                targets: {
-                  chrome: "60",
-                  firefox: "60",
-                  ie: "9",
-                  safari: "10",
-                  edge: "17",
-                },
-              },
-            ],
-          ],
-          cacheDirectory: true,
-        },
+        use: [
+          /* 
+                开启多进程打包。 
+                进程启动大概为600ms，进程通信也有开销。
+                只有工作消耗时间比较长，才需要多进程打包
+              */
+          // {
+          //   loader: "thread-loader",
+          //   options: {
+          //     workers: 2, // 进程2个
+          //   },
+          // },
+          {
+            loader: "babel-loader",
+            options: {
+              presets: [
+                [
+                  "@babel/preset-env",
+                  {
+                    useBuiltIns: "usage",
+                    corejs: {
+                      version: 3,
+                    },
+                    targets: {
+                      chrome: "60",
+                      firefox: "60",
+                      ie: "9",
+                      safari: "10",
+                      edge: "17",
+                    },
+                  },
+                ],
+              ],
+              // 开启babel缓存
+              // 第二次构建时，会读取之前的缓存
+              cacheDirectory: true,
+            },
+          },
+        ],
       },
     ],
   },
@@ -104,7 +121,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new CssMinimizerPlugin(),
     new MiniCssExtractPlugin({
-      filename: "css/style.css",
+      filename: "css/style.[contenthash:6].css",
     }),
     new ESLintPlugin({
       extensions: ["js"],
