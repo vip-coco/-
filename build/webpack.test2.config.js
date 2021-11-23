@@ -12,7 +12,7 @@ module.exports = (env) =>{
     output: {
       // 输出文件名
       filename: "js/index.js",
-      path: path.resolve(__dirname, "../dist"),
+      path: path.resolve(__dirname, "./dist"),
     },
     module: {
       rules: [
@@ -83,8 +83,11 @@ module.exports = (env) =>{
       // 开启HMR功能，热模块表示只跟新编译部分模块
       //hot: true
     },
+    performance: {
+      hints: false,//关闭提示
+    },
     // 模式
-    mode: "production",//env.production?"production":'development',//development,production
+    mode: env.production?'production':'development',//development,production
     devtool: "eval-source-map",
   };
 };

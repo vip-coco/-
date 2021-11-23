@@ -15,6 +15,8 @@ const prodConfig = {
     filename: 'js/[name].[contenthash:6].js',//hash解决缓存问题//contenthash: 根据文件的内容生成hash值
     // __dirname nodejs的变量，代表当前文件的目录绝对路径
     path: path.resolve(__dirname, "../dist"),
+    clean:true,
+    //publicPath:'http://localhost:8090'
   }, 
   module: {
     rules: [],
@@ -42,7 +44,7 @@ const prodConfig = {
       chunks: 'all'
     }
   },
-  devtool: "eval-source-map",
+  devtool: "source-map",
 };
 
 module.exports = merge(webpackBaseConfig, prodConfig);

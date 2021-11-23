@@ -1,5 +1,5 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");  
+const HtmlWebpackPlugin = require("html-webpack-plugin"); 
 const { merge } = require("webpack-merge");
 const webpackBaseConfig = require("./webpack.base.config.js");
 
@@ -32,12 +32,16 @@ const prodConfig = {
       directory: path.join(__dirname, "public"),
     },
     compress: true,
-    port: 8000,
+    port: 3000,
     open: true,
     // 开启HMR功能，热模块表示只跟新编译部分模块
     //hot: true,
+    //liveReload: true,
     //watchFiles: ["./src/index.html"],
   }, 
+  // performance: {
+  //   hints: false,//关闭编译提示
+  // },
   devtool: "eval-source-map",
 };
 

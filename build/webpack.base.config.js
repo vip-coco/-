@@ -4,7 +4,7 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const ESLintPlugin = require("eslint-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+//const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const commonCssLoader = [
   {
@@ -42,6 +42,13 @@ module.exports = {
       {
         test: /\.styl(us)?$/, //两种结尾方式styl或者stylus
         use: [...commonCssLoader, "stylus-loader"],
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
+        type: "asset/resource",  
+        generator: {
+          filename: "fontSize/[contenthash:10].[name][ext]",
+        },
       },
       {
         test: /\.(jpg|png|gif)$/,
@@ -118,8 +125,8 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(),
-    new CssMinimizerPlugin(),
+    //new CssMinimizerPlugin()
+    //new CleanWebpackPlugin(), 
     new MiniCssExtractPlugin({
       filename: "css/style.[contenthash:6].css",
     }),
@@ -129,4 +136,11 @@ module.exports = {
       fix: true,
     }),
   ],
+  optimization: {
+    minimizer: [
+      // 在 webpack@5 中，你可以使用 `...` 语法来扩展现有的 minimizer（即 `terser-webpack-plugin`），将下一行取消注释
+      // `...`,
+      new CssMinimizerPlugin(),
+    ],
+  },
 };
