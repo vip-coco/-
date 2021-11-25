@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config ./build/webpack.dist.prod.config.js",
+    "build": "webpack --progress --config ./build/webpack.dist.prod.config.js",
     "dev": "webpack serve --config ./build/webpack.dev.config.js",
     "test": "webpack serve --config ./build/webpack.test.config.js"
   },

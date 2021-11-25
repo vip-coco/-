@@ -18,6 +18,7 @@ const prodConfig = {
     clean:true,
     //publicPath:'http://localhost:8090'
   }, 
+  stats: 'errors-only',//只在发生错误时输出
   module: {
     rules: [],
   },
